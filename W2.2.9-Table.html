@@ -1,0 +1,88 @@
+<!--
+    Table
+-Design
++ Make sure to sketch(phác thảo) your layout(bố cục) before you code
++ Decide on the number of rows and columns
++ Decide if any rows/columns will span multiple cell(trải rộng nhiều ô)
+
+-Tags:
+<table>_the container tag
+    <th>...</th>_Table heading(Tiêu đều mỗi cột)
+    <tr>...</tr>_the rows
+    <td>...</td>_the column
+Sử dụng rowspan hoặc colspan để gộp các cột với nhau với cùng 1 nội dung
+<thead>,<tbody>,<tfoot> là 3 thành phần cơ bản của bảng
+
+    =>Summary:
+    -Tables should be   only used for tabular data: Không nên sử dụng để bố trí
+    -Draw your table before you code your table
+    -Check for unclose tags
+-->
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            Table Demo
+        </title>
+    </head>
+    <body>
+        <table>
+            <tr><th>R1</th><th>R2</th><th>R3</th></tr>
+            <tr><td>One</td><td>Two</td><td>Three</td></tr>
+            <tr><td>Four</td><td>Fine</td><td>Six</td></tr>
+            <tr><td rowspan="2">Bốn</td><td>Năm</td><td>Sáu</td></tr><!--Lấy 2 hàng-->
+            <tr><td>Eight</td><td>Nine</td></tr>
+            <tr>
+                <td colspan="3">Summarry123456</td><!--gộp 3 cột làm 1-->
+            </tr>
+        </table>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Subject</th>
+                    <th>Mark</th>
+                    <th>Pass</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Đinh Văn A</td>
+                    <td rowspan="2">MAD101</td>
+                    <td rowspan="2">10</td>
+                    <td rowspan="4"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Đinh Văn B</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Đinh Văn C</td>
+                    <td>PRO192</td>
+                    <td>10</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4" style="padding-left: 250px;">Final Exam</td>
+                    <td style="color: green;">Yes</td>
+                </tr>
+            </tfoot>
+        </table>
+        <style>
+            table{
+                border-collapse: unset;
+            }
+            td,th{
+                border: 1px solid green;
+                padding: 40px 50px;
+            }
+        </style>
+    </body>
+</html>
